@@ -1,70 +1,87 @@
 import { useState } from "react";
-import logo from "../assets/shared/logo.svg";
+import Logo from "../assets/shared/logo.svg?react";
+import Hamburger from "../assets/shared/icon-hamburger.svg?react";
+import Close from "../assets/shared/icon-close.svg?react";
 
 const Navbar = () => {
   const [menuCollapsed, setMenuCollapsed] = useState(true);
+  const [selected, setSelected] = useState("home");
 
   const toggleMenu = () => {
     if (menuCollapsed) {
+      // expand the menu
       setMenuCollapsed(false);
-      console.log("opened menu", "is it collapsed?", menuCollapsed);
     } else {
+      // collapse the menu
       setMenuCollapsed(true);
-      console.log("collapsed menu", "is it collapsed?", menuCollapsed);
     }
   };
 
   return (
-    <header className="relative">
-      <div className="w-screen flex justify-between">
-        {/* Logo and Menu toggle Button */}
-        <div>
-          <img src={logo} alt="Logo" />
+    <header className="relative z-10 md:flex md:justify-between xl:pt-10">
+      {/* Logo and Menu toggle Button */}
+      <div className="py-6 pl-6 md:pl-10 xl:pl-16 md:flex-1 md:w-auto w-screen flex justify-between xl:items-center xl:gap-16">
+        <div className="">
+          <Logo />
         </div>
+        {/* line */}
+        <div className="xl:block hidden bg-white/25 h-px md:flex-1 xl:-mr-20 z-20"></div>
         <button
-          className="mr-6"
+          className="mr-6 z-20 md:hidden block"
           aria-expanded="false"
           aria-label="menu"
           onClick={toggleMenu}
         >
-          <span>X</span>
+          {menuCollapsed ? <Hamburger /> : <Close />}
         </button>
       </div>
       <div
         className={
-          "w-screen " + (menuCollapsed ? "translate-x-0" : "translate-x-100")
+          "md:w-auto w-screen transition-transform duration-500 ease-in md:translate-x-0 " +
+          (menuCollapsed ? "translate-x-150" : "translate-x-0")
         }
       >
         {/* MENU DIALOG */}
-        <div className="uppercase numbered-title h-screen z-10 absolute bg-cust-dark/15 right-0 top-0 backdrop-blur-lg pl-8 flex flex-col gap-12 w-[70%]">
-          <div className="py-8 w-full flex justify-end">
-            <button
-              className="mr-4"
-              aria-expanded="false"
-              aria-label="menu"
-              onClick={toggleMenu}
-            >
-              <span>X</span>
-            </button>
-          </div>
-          <nav className="">
-            <ul className="flex flex-col gap-8">
-              <li>
+        <div className="uppercase numbered-title md:h-full h-screen md:static absolute md:bg-white/5 bg-cust-dark/15 right-0 top-0 md:translate-0 -translate-y-24 backdrop-blur-2xl xl:pl-20 md:p-0 pl-8 flex flex-col md:justify-center gap-12 md:w-full w-[75%]">
+          {/* Navbar */}
+          <nav className="md:h-full">
+            <ul className="md:flex-row flex flex-col md:gap-12 gap-8 md:text-cust-300 md:px-16 md:pt-0 pt-30 px-10 underline-indicators md:h-full">
+              <li
+                onClick={() => {
+                  setSelected("home");
+                }}
+                aria-selected={selected == "home"}
+              >
                 <a href="#">
                   <span>00</span>Home
                 </a>
               </li>
-              <li>
+              <li
+                onClick={() => {
+                  setSelected("destination");
+                }}
+                aria-selected={selected == "destination"}
+              >
                 <a href="#">
                   <span>01</span>Destination
                 </a>
               </li>
-              <li>
+              <li
+                onClick={() => {
+                  setSelected("crew");
+                }}
+                aria-selected={selected == "crew"}
+              >
                 <a href="#">
                   <span>02</span>Crew
                 </a>
               </li>
-              <li>
+              <li
+                onClick={() => {
+                  setSelected("technology");
+                }}
+                aria-selected={selected == "technology"}
+              >
                 <a href="#">
                   <span>03</span>Technology
                 </a>
