@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import { Link } from "react-router-dom";
 
 const home = () => {
   return (
@@ -9,8 +10,8 @@ const home = () => {
           <div className="flex flex-col items-center justify-center gap-6 xl:max-w-lg md:max-w-md max-w-sm">
             <div className="flex flex-col gap-6 text-center xl:text-start xl:items-start xl:w-full">
               <p className="small-heading">So, you want to travel to</p>
-              <h1 className="large-heading">Space</h1>
-              <p className="text-cust-light md:text-cust-300 text-cust-200 ">
+              <h1 className="uppercase font-cust-serif text-7xl md:text-9xl xl:text-[144px]">Space</h1>
+              <p className="para">
                 Let’s face it; if you want to go to space, you might as well
                 genuinely go to outer space and not hover kind of on the edge of
                 it. Well sit back, and relax because we’ll give you a truly out
@@ -20,7 +21,9 @@ const home = () => {
           </div>
           {/* Button */}
           <div className="flex items-center xl:justify-end justify-center flex-1">
-            <button className="large-button">Explore</button>
+            <Link to={"/destination"} className="large-button">
+              Explore
+            </Link>
           </div>
         </article>
       </div>

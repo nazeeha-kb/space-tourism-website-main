@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Logo from "../assets/shared/logo.svg?react";
 import Hamburger from "../assets/shared/icon-hamburger.svg?react";
@@ -6,7 +7,8 @@ import Close from "../assets/shared/icon-close.svg?react";
 
 const Navbar = () => {
   const [menuCollapsed, setMenuCollapsed] = useState(true);
-  const [selected, setSelected] = useState("home");
+  const location = useLocation(); // Hook call
+  const currentPath = location.pathname;
 
   const toggleMenu = () => {
     if (menuCollapsed) {
@@ -46,45 +48,45 @@ const Navbar = () => {
         <div className="uppercase numbered-title md:h-full h-screen md:static absolute md:bg-white/5 bg-cust-dark/15 right-0 top-0 md:translate-0 -translate-y-24 backdrop-blur-2xl xl:pl-20 md:p-0 pl-8 flex flex-col md:justify-center gap-12 md:w-full w-[75%]">
           {/* Navbar */}
           <nav className="md:h-full">
-            <ul className="md:flex-row flex flex-col md:gap-12 gap-8 md:text-cust-300 md:px-16 md:pt-0 pt-30 px-10 underline-indicators md:h-full">
+            <ul className="md:flex-row flex flex-col md:gap-12 gap-8 md:text-cust-300 md:px-16 md:pt-0 pt-30 px-10 underline-indicators main-nav md:h-full">
               <li
                 onClick={() => {
                   setSelected("home");
                 }}
-                aria-selected={selected == "home"}
+                aria-selected={currentPath === "/"}
               >
                 <Link to={"/"}>
-                  <span>00</span>Home
+                  <span className="text-white">00</span>Home
                 </Link>
               </li>
               <li
                 onClick={() => {
                   setSelected("destination");
                 }}
-                aria-selected={selected == "destination"}
+                aria-selected={currentPath === "/destination"}
               >
                 <Link to={"/destination"}>
-                  <span>01</span>Destination
+                  <span className="text-white">01</span>Destination
                 </Link>
               </li>
               <li
                 onClick={() => {
                   setSelected("crew");
                 }}
-                aria-selected={selected == "crew"}
+                aria-selected={currentPath === "/crew"}
               >
                 <Link to={"/crew"}>
-                  <span>02</span>Crew
+                  <span className="text-white">02</span>Crew
                 </Link>
               </li>
               <li
                 onClick={() => {
                   setSelected("technology");
                 }}
-                aria-selected={selected == "technology"}
+                aria-selected={currentPath == "technology"}
               >
                 <Link to={"/technology"}>
-                  <span>03</span>Technology
+                  <span className="text-white">03</span>Technology
                 </Link>
               </li>
             </ul>

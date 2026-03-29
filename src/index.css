@@ -98,17 +98,12 @@
 
   .numbered-title span {
     margin-right: .5em;
-    @apply text-white font-semibold;
+    @apply font-semibold;
   }
 
   /* small heading */
   .small-heading {
     @apply uppercase text-cust-light font-cust-sans-cond tracking-widest md:text-cust-500 text-cust-300;
-  }
-
-  /* large heading */
-  .large-heading {
-    @apply uppercase font-cust-serif xl:text-[144px] md:text-9xl text-7xl;
   }
 
   /* Background images */
@@ -121,9 +116,19 @@
     @apply xl:bg-[url('/src/assets/home/background-home-desktop.jpg')] sm:bg-[url('/src/assets/home/background-home-tablet.jpg')] bg-[url('/src/assets/home/background-home-mobile.jpg')];
   }
 
+
+  .destination-bg {
+    @apply xl:bg-[url('/src/assets/destination/background-destination-desktop.jpg')] sm:bg-[url('/src/assets/destination/background-destination-tablet.jpg')] bg-[url('/src/assets/destination/background-destination-mobile.jpg')];
+  }
+
   /* Navbar height */
   .space-navbar {
     @apply mt-24 xl:mt-34;
+  }
+
+  /* paragraph */
+  .para {
+    @apply text-cust-light md:text-cust-300 text-cust-200;
   }
 
 }
@@ -167,17 +172,29 @@
   }
 
   .underline-indicators>* {
-    @apply border-white cursor-pointer grid md:place-items-center transition-opacity duration-200;
+    @apply border-white cursor-pointer grid md:place-items-center transition-opacity duration-200 h-full;
   }
 
-  .underline-indicators>*:hover,
-  .underline-indicators>*:focus {
-    @apply md:border-b-4 md:border-r-0 border-r-4 border-white/50;
+  .underline-indicators.plain>*:hover,
+  .underline-indicators.plain>*:focus {
+    @apply border-b-3 border-white/50;
   }
 
-  .underline-indicators>.active,
-  .underline-indicators>[aria-selected="true"] {
-    @apply md:border-b-4 md:border-r-0 border-r-4 border-white text-white;
+  /* indicator for nav */
+  .underline-indicators.main-nav>*:hover,
+  .underline-indicators.main-nav>*:focus {
+    @apply md:border-b-3 md:border-r-0 border-r-4 border-white/50;
+  }
+
+  .underline-indicators.plain>.active,
+  .underline-indicators.plain>[aria-selected="true"] {
+    @apply border-b-3 border-white text-white;
+  }
+
+  /* indicator for nav */
+  .underline-indicators.main-nav>.active,
+  .underline-indicators.main-nav>[aria-selected="true"] {
+    @apply md:border-b-3 md:border-r-0 border-r-4 border-white text-white;
   }
 
   .underline-indicators a {
