@@ -3,10 +3,9 @@ import Navbar from "../components/Navbar";
 
 const home = () => {
   return (
-    <div className="min-h-screen home-bg bg-main flex flex-col">
-      <Navbar />
-      <main className="flex justify-center flex-1">
-        <article className="gap-12 flex flex-col xl:flex-row xl:items-end items-center w-6xl xl:px-0 md:px-10 p-6 xl:py-32  md:py-32">
+    <main className="home-bg bg-main min-h-screen flex flex-col">
+      <div className="space-navbar flex justify-center flex-1 md:py-32">
+        <article className="gap-12 flex flex-col xl:flex-row xl:items-end items-center w-6xl xl:px-0 md:px-10 p-6">
           <div className="flex flex-col items-center justify-center gap-6 xl:max-w-lg md:max-w-md max-w-sm">
             <div className="flex flex-col gap-6 text-center xl:text-start xl:items-start xl:w-full">
               <p className="small-heading">So, you want to travel to</p>
@@ -24,8 +23,8 @@ const home = () => {
             <button className="large-button">Explore</button>
           </div>
         </article>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 };
 

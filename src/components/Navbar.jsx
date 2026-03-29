@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Logo from "../assets/shared/logo.svg?react";
 import Hamburger from "../assets/shared/icon-hamburger.svg?react";
 import Close from "../assets/shared/icon-close.svg?react";
@@ -21,9 +22,9 @@ const Navbar = () => {
     <header className="relative z-10 md:flex md:justify-between xl:pt-10">
       {/* Logo and Menu toggle Button */}
       <div className="py-6 pl-6 md:pl-10 xl:pl-16 md:flex-1 md:w-auto w-screen flex justify-between xl:items-center xl:gap-16">
-        <div className="">
+        <Link to={"/"}>
           <Logo />
-        </div>
+        </Link>
         {/* line */}
         <div className="xl:block hidden bg-white/25 h-px md:flex-1 xl:-mr-20 z-20"></div>
         <button
@@ -52,9 +53,9 @@ const Navbar = () => {
                 }}
                 aria-selected={selected == "home"}
               >
-                <a href="#">
+                <Link to={"/"}>
                   <span>00</span>Home
-                </a>
+                </Link>
               </li>
               <li
                 onClick={() => {
@@ -62,9 +63,9 @@ const Navbar = () => {
                 }}
                 aria-selected={selected == "destination"}
               >
-                <a href="#">
+                <Link to={"/destination"}>
                   <span>01</span>Destination
-                </a>
+                </Link>
               </li>
               <li
                 onClick={() => {
@@ -72,9 +73,9 @@ const Navbar = () => {
                 }}
                 aria-selected={selected == "crew"}
               >
-                <a href="#">
+                <Link to={"/crew"}>
                   <span>02</span>Crew
-                </a>
+                </Link>
               </li>
               <li
                 onClick={() => {
@@ -82,9 +83,9 @@ const Navbar = () => {
                 }}
                 aria-selected={selected == "technology"}
               >
-                <a href="#">
+                <Link to={"/technology"}>
                   <span>03</span>Technology
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
