@@ -49,42 +49,22 @@ const Navbar = () => {
           {/* Navbar */}
           <nav className="md:h-full">
             <ul className="md:flex-row flex flex-col md:gap-12 gap-8 md:text-cust-300 md:px-16 md:pt-0 pt-30 px-10 underline-indicators main-nav md:h-full">
-              <li
-                onClick={() => {
-                  setSelected("home");
-                }}
-                aria-selected={currentPath === "/"}
-              >
+              <li aria-selected={currentPath === "/"}>
                 <Link to={"/"}>
                   <span className="text-white">00</span>Home
                 </Link>
               </li>
-              <li
-                onClick={() => {
-                  setSelected("destination");
-                }}
-                aria-selected={currentPath === "/destination"}
-              >
+              <li aria-selected={currentPath === "/destination"}>
                 <Link to={"/destination"}>
                   <span className="text-white">01</span>Destination
                 </Link>
               </li>
-              <li
-                onClick={() => {
-                  setSelected("crew");
-                }}
-                aria-selected={currentPath === "/crew"}
-              >
+              <li aria-selected={currentPath === "/crew"}>
                 <Link to={"/crew"}>
                   <span className="text-white">02</span>Crew
                 </Link>
               </li>
-              <li
-                onClick={() => {
-                  setSelected("technology");
-                }}
-                aria-selected={currentPath == "technology"}
-              >
+              <li aria-selected={currentPath == "technology"}>
                 <Link to={"/technology"}>
                   <span className="text-white">03</span>Technology
                 </Link>

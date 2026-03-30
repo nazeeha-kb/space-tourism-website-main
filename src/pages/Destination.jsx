@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
+import data from "../data/data";
 import moon from "./../assets/destination/image-moon.webp";
 
 const Destination = () => {
-  const [destination, setDestination] = useState("moon");
+  const [index, setIndex] = useState(0);
+  let destination = data[0].destinations[index];
+
+  // useEffect(() => {
+  //   destination = data.destinations[{ index }];
+  //   console.log(index)
+  // }, [index]);
 
   return (
     <main className="destination-bg bg-main min-h-screen flex flex-col items-center">
@@ -18,43 +25,75 @@ const Destination = () => {
           <article className="flex flex-col xl:flex-row gap-8 xl:gap-25 xl:pt-8">
             {/* image */}
             <div className="grid place-items-center py-4 md:py-12 xl:py-0">
-              <img src={moon} alt="" className="w-37.5 md:w-75 xl:w-120 aspect-1" />
+              <img
+                src={destination.images.webp}
+                alt=""
+                className="w-37.5 md:w-75 xl:w-120 aspect-1"
+              />
             </div>
             {/* Content */}
-            <div className="flex flex-col gap-6 xl:gap-10 items-center md:items-start text-center md:text-start">
+            <div className="flex flex-col gap-6 xl:gap-10 items-center xl:items-start text-center xl:text-start">
               <nav>
                 <ul className="flex gap-8 numbered-title items-start justify-center underline-indicators plain h-8 text-cust-300">
-                  <li aria-selected="true">Moon</li>
-                  <li>Mars</li>
-                  <li>Europa</li>
-                  <li>Titan</li>
+                  {/* set index to index selected below */}
+                  <li
+                    onClick={() => {
+                      setIndex(0);
+                    }}
+                    aria-selected={index == 0}
+                  >
+                    Moon
+                  </li>
+                  <li
+                    onClick={() => {
+                      setIndex(1);
+                    }}
+                    aria-selected={index == 1}
+                  >
+                    Mars
+                  </li>
+                  <li
+                    onClick={() => {
+                      setIndex(2);
+                    }}
+                    aria-selected={index == 2}
+                  >
+                    Europa
+                  </li>
+                  <li
+                    onClick={() => {
+                      setIndex(3);
+                    }}
+                    aria-selected={index == 3}
+                  >
+                    Titan
+                  </li>
                 </ul>
               </nav>
               <div className="flex flex-col gap-4 max-w-md md:max-w-lg">
-                <h2 className="uppercase font-cust-serif text-7xl xl:text-cust-800">Moon</h2>
-                <p className="para">
-                  See our planet as you’ve never seen it before. A perfect
-                  relaxing trip away to help regain perspective and come back
-                  refreshed. While you’re there, take in some history by
-                  visiting the Luna 2 and Apollo 11 landing sites.
-                </p>
+                <h2 className="uppercase font-cust-serif text-7xl xl:text-cust-800">
+                  {destination.name}
+                </h2>
+                <p className="para">{destination.description}</p>
               </div>
               <hr className="text-white/25  w-full" />
               {/* Time */}
-              <div className="flex flex-col md:flex-row gap-6 uppercase w-full">
+              <div className="flex flex-col sm:flex-row gap-6 uppercase w-full">
                 <div className="flex flex-col gap-3 flex-1">
                   <div className=" text-cust-200 text-cust-light">
                     Avg. distance
                   </div>
                   <div className="text-cust-500 font-cust-serif">
-                    384,400 km
+                    {destination.distance}
                   </div>
                 </div>
                 <div className="flex flex-col gap-3 flex-1">
                   <div className="text-cust-200 text-cust-light">
                     Est. travel time
                   </div>
-                  <div className="text-cust-500 font-cust-serif">3 days</div>
+                  <div className="text-cust-500 font-cust-serif">
+                    {destination.travel}
+                  </div>
                 </div>
               </div>
             </div>
