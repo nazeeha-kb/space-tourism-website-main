@@ -1,12 +1,21 @@
 // Destinations images
-import moonWebp from "../assets/destination/image-moon.webp";
 import moonPng from "../assets/destination/image-moon.png";
-import marsWebp from "../assets/destination/image-mars.webp";
+import moonWebp from "../assets/destination/image-moon.webp";
 import marsPng from "../assets/destination/image-mars.png";
-import europaWebp from "../assets/destination/image-europa.webp";
+import marsWebp from "../assets/destination/image-mars.webp";
 import europaPng from "../assets/destination/image-europa.png";
-import titanWebp from "../assets/destination/image-titan.webp";
+import europaWebp from "../assets/destination/image-europa.webp";
 import titanPng from "../assets/destination/image-titan.png";
+import titanWebp from "../assets/destination/image-titan.webp";
+// Crew images
+import douglasWebp from "../assets/crew/image-douglas-hurley.webp";
+import douglasPng from "../assets/crew/image-douglas-hurley.png";
+import markWebp from "../assets/crew/image-mark-shuttleworth.webp";
+import markPng from "../assets/crew/image-mark-shuttleworth.png";
+import victorWebp from "../assets/crew/image-victor-glover.webp";
+import victorPng from "../assets/crew/image-victor-glover.png";
+import anoushehWebp from "../assets/crew/image-anousheh-ansari.webp";
+import anoushehPng from "../assets/crew/image-anousheh-ansari.png";
 
 const data = [
   {
@@ -60,8 +69,8 @@ const data = [
       {
         name: "Douglas Hurley",
         images: {
-          png: "./assets/crew/image-douglas-hurley.png",
-          webp: "./assets/crew/image-douglas-hurley.webp",
+          png: douglasPng,
+          webp: douglasWebp,
         },
         role: "Commander",
         bio: "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.",
@@ -69,8 +78,8 @@ const data = [
       {
         name: "Mark Shuttleworth",
         images: {
-          png: "./assets/crew/image-mark-shuttleworth.png",
-          webp: "./assets/crew/image-mark-shuttleworth.webp",
+          png: markPng,
+          webp: markWebp,
         },
         role: "Mission Specialist",
         bio: "Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.",
@@ -78,8 +87,8 @@ const data = [
       {
         name: "Victor Glover",
         images: {
-          png: "./assets/crew/image-victor-glover.png",
-          webp: "./assets/crew/image-victor-glover.webp",
+          png: victorPng,
+          webp: victorWebp,
         },
         role: "Pilot",
         bio: "Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer.",
@@ -87,8 +96,8 @@ const data = [
       {
         name: "Anousheh Ansari",
         images: {
-          png: "./assets/crew/image-anousheh-ansari.png",
-          webp: "./assets/crew/image-anousheh-ansari.webp",
+          png: anoushehPng,
+          webp: anoushehWebp,
         },
         role: "Flight Engineer",
         bio: "Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space.",
