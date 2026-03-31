@@ -16,7 +16,7 @@ const Technology = () => {
         </article>
         <article className="flex flex-col lg:flex-row-reverse gap-8 lg:gap-14 w-auto justify-center lg:justify-between items-center text-center">
           {/* Image */}
-          <div className="tech-img-parent pt-16 relative z-10 -mx-6 lg:-mr-20">
+          <div className="tech-img-parent pt-16 -mx-6 lg:-mr-20">
             <img
               src={technology.images.portrait}
               alt=""
@@ -54,7 +54,7 @@ const Technology = () => {
               </ul>
             </div>
             {/* Content */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 xl:text-start">
               <div className="uppercase font-cust-serif">
                 <h2 className="cap-heading">The terminology...</h2>
                 <h1 className="large-heading">{technology.name}</h1>

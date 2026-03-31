@@ -31,7 +31,7 @@ const Crew = () => {
               </div>
               {/* Dot Indicators */}
               <div>
-                <ul className="dot-indicators flex-row flex gap-4 xl:gap-10 h-2.5">
+                <ul className="dot-indicators .tech-indiciator flex-row flex gap-4 xl:gap-10 h-2.5 -mt-20">
                   <li
                     onClick={() => {
                       setIndex(0);

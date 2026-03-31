@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Logo from "../assets/shared/logo.svg?react";
@@ -9,6 +9,8 @@ const Navbar = () => {
   const [menuCollapsed, setMenuCollapsed] = useState(true);
   const location = useLocation(); // Hook call
   const currentPath = location.pathname;
+  const menuRef = useRef(null);
+  const menuBtnRef = useRef(null);
 
   const toggleMenu = () => {
     if (menuCollapsed) {
@@ -20,6 +22,23 @@ const Navbar = () => {
     }
   };
 
+  useEffect(() => {
+    const handleClick = (e) => {
+      const menuBtnEl = menuBtnRef.current;
+      const menuEl = menuRef.current;
+
+      const isClickOnMenuBtn = menuBtnEl ? menuBtnEl.contains(e.target) : false;
+      const isClickOnMenu = menuEl ? menuEl.contains(e.target) : false;
+
+      if (!menuCollapsed && !isClickOnMenu && !isClickOnMenuBtn) {
+        setMenuCollapsed(true);
+      }
+    };
+
+    window.addEventListener("click", handleClick);
+    return () => window.removeEventListener("click", handleClick);
+  }, [menuCollapsed]);
+
   return (
     <header className="relative z-10 md:flex md:justify-between xl:pt-10">
       {/* Logo and Menu toggle Button */}
@@ -30,10 +49,12 @@ const Navbar = () => {
         {/* line */}
         <div className="xl:block hidden bg-white/25 h-px md:flex-1 xl:-mr-20 z-20"></div>
         <button
+          ref={menuBtnRef}
           className="mr-6 z-20 md:hidden block"
           aria-expanded="false"
           aria-label="menu"
           onClick={toggleMenu}
+          id="menu-btn"
         >
           {menuCollapsed ? <Hamburger /> : <Close />}
         </button>
@@ -45,7 +66,11 @@ const Navbar = () => {
         }
       >
         {/* MENU DIALOG */}
-        <div className="uppercase numbered-title md:h-full h-screen md:static absolute md:bg-white/5 bg-cust-dark/15 right-0 top-0 md:translate-0 -translate-y-24 backdrop-blur-2xl xl:pl-20 md:p-0 pl-8 flex flex-col md:justify-center gap-12 md:w-full w-[75%]">
+        <div
+          id="menu"
+          ref={menuRef}
+          className="uppercase numbered-title md:h-full h-screen md:static absolute md:bg-white/5 bg-cust-dark/15 right-0 top-0 md:translate-0 -translate-y-24 backdrop-blur-2xl xl:pl-20 md:p-0 pl-8 flex flex-col md:justify-center gap-12 md:w-full w-[75%]"
+        >
           {/* Navbar */}
           <nav className="md:h-full">
             <ul className="md:flex-row flex flex-col md:gap-12 gap-8 md:text-cust-300 md:px-16 md:pt-0 pt-30 px-10 underline-indicators main-nav md:h-full">
