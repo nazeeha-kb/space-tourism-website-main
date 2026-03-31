@@ -21,6 +21,7 @@
   --font-cust-serif: "Bellefair", serif;
   --font-cust-sans-cond: "Barlow Condensed", sans-serif;
   --font-cust-sans-normal: "Barlow", sans-serif;
+
 }
 
 
@@ -106,6 +107,16 @@
     @apply uppercase text-cust-light font-cust-sans-cond tracking-widest md:text-cust-500 text-cust-300;
   }
 
+  /* cap heading */
+  .cap-heading {
+    @apply text-white/50 text-cust-400 md:text-[24px] xl:text-cust-600;
+  }
+
+  /* large heading */
+  .large-heading {
+    @apply text-white text-cust-500 md:text-[40px] xl:text-cust-700;
+  }
+
   /* Background images */
   .bg-main {
     background-size: cover;
@@ -128,6 +139,10 @@
     @apply xl:bg-[url('/src/assets/crew/background-crew-desktop.jpg')] sm:bg-[url('/src/assets/crew/background-crew-tablet.jpg')] bg-[url('/src/assets/crew/background-crew-mobile.jpg')];
   }
 
+  /* Technology bg */
+  .technology-bg {
+    @apply xl:bg-[url('/src/assets/technology/background-technology-desktop.jpg')] sm:bg-[url('/src/assets/technology/background-technology-tablet.jpg')] bg-[url('/src/assets/technology/background-technology-mobile.jpg')];
+  }
 
   /* Navbar height */
   .space-navbar {
@@ -229,28 +244,30 @@
   }
 
   /* Number indicators */
-  .number-indicators {
-    flex-direction: column;
-    max-width: 3em;
-  }
 
   .number-indicators>* {
-    border: 2px solid hsl(var(--clr-white) / .40);
-    background-color: hsl(var(--clr-dark));
-    color: hsl(var(--clr-white));
-    border-radius: 50%;
-    aspect-ratio: 1;
-    display: grid;
-    place-items: center;
+    @apply border border-white/25 rounded-full text-white bg-cust-dark h-10 md:h-14 lg:h-18 xl:h-20 aspect-[1] font-cust-serif grid place-items-center cursor-pointer transition-colors duration-400;
   }
 
-  .number-indicators>*:hover {
-    border: 2px solid hsl(var(--clr-white));
+  .number-indicators>*:hover,
+  .number-indicators>*:focus {
+    @apply border-white;
   }
 
   .number-indicators>[aria-selected="true"] {
-    background-color: hsl(var(--clr-white));
-    color: hsl(var(--clr-dark));
+    @apply bg-white text-cust-dark;
   }
 
+}
+
+/* Media Queries */
+
+@media (min-height: 797px) {
+  .crew-img {
+    @apply xl:h-180;
+  }
+
+  .tech-img {
+    @apply xl:w-152 xl:h-150;
+  }
 }

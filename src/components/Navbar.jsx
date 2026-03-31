@@ -64,7 +64,7 @@ const Navbar = () => {
                   <span className="text-white">02</span>Crew
                 </Link>
               </li>
-              <li aria-selected={currentPath == "technology"}>
+              <li aria-selected={currentPath == "/technology"}>
                 <Link to={"/technology"}>
                   <span className="text-white">03</span>Technology
                 </Link>
