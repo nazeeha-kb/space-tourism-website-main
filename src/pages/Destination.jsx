@@ -35,36 +35,16 @@ const Destination = () => {
               <nav>
                 <ul className="flex gap-8 numbered-title items-start justify-center underline-indicators plain h-8 text-cust-300">
                   {/* set index to index selected below */}
-                  <li
-                    onClick={() => {
-                      setIndex(0);
-                    }}
-                    aria-selected={index == 0}
-                  >
+                  <li onClick={() => setIndex(0)} aria-selected={index == 0}>
                     Moon
                   </li>
-                  <li
-                    onClick={() => {
-                      setIndex(1);
-                    }}
-                    aria-selected={index == 1}
-                  >
+                  <li onClick={() => setIndex(1)} aria-selected={index == 1}>
                     Mars
                   </li>
-                  <li
-                    onClick={() => {
-                      setIndex(2);
-                    }}
-                    aria-selected={index == 2}
-                  >
+                  <li onClick={() => setIndex(2)} aria-selected={index == 2}>
                     Europa
                   </li>
-                  <li
-                    onClick={() => {
-                      setIndex(3);
-                    }}
-                    aria-selected={index == 3}
-                  >
+                  <li onClick={() => setIndex(3)} aria-selected={index == 3}>
                     Titan
                   </li>
                 </ul>

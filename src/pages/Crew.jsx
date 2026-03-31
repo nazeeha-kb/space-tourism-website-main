@@ -32,7 +32,7 @@ const Crew = () => {
                 <p className="text-cust-light text-cust-300">{crew.bio}</p>
               </div>
               {/* Dot Indicators */}
-              <div>
+              <nav>
                 <ul className="dot-indicators .tech-indiciator flex-row flex gap-4 xl:gap-10 h-2.5 -mt-20">
                   <li
                     onClick={() => {
@@ -59,7 +59,7 @@ const Crew = () => {
                     aria-selected={index == 3}
                   ></li>
                 </ul>
-              </div>
+              </nav>
             </article>
             {/* Image */}
             <div className="grid place-items-center pt-4 xl:pt-0">

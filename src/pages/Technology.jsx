@@ -32,7 +32,7 @@ const Technology = () => {
           </div>
           <div className="flex flex-col lg:flex-row gap-10">
             {/* Indicators */}
-            <div>
+            <nav>
               <ul className="flex flex-row lg:flex-col justify-center number-indicators gap-4">
                 <li
                   onClick={() => {
@@ -59,7 +59,7 @@ const Technology = () => {
                   3
                 </li>
               </ul>
-            </div>
+            </nav>
             {/* Content */}
             <div className="flex flex-col gap-4 xl:text-start">
               <div className="uppercase font-cust-serif">
