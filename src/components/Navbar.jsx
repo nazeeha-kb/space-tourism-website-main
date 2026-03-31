@@ -11,8 +11,10 @@ const Navbar = () => {
   const currentPath = location.pathname;
   const menuRef = useRef(null);
   const menuBtnRef = useRef(null);
+  const menuCollapsedRef = useRef(true);
 
-  const toggleMenu = () => {
+  const toggleMenu = (e) => {
+    e.stopPropagation();
     if (menuCollapsed) {
       // expand the menu
       setMenuCollapsed(false);
@@ -23,21 +25,21 @@ const Navbar = () => {
   };
 
   useEffect(() => {
+    menuCollapsedRef.current = menuCollapsed;
+  }, [menuCollapsed]);
+
+  useEffect(() => {
     const handleClick = (e) => {
-      const menuBtnEl = menuBtnRef.current;
-      const menuEl = menuRef.current;
-
-      const isClickOnMenuBtn = menuBtnEl ? menuBtnEl.contains(e.target) : false;
-      const isClickOnMenu = menuEl ? menuEl.contains(e.target) : false;
-
-      if (!menuCollapsed && !isClickOnMenu && !isClickOnMenuBtn) {
+      const isClickOnMenuBtn = menuBtnRef.current?.contains(e.target);
+      const isClickOnMenu = menuRef.current?.contains(e.target);
+      if (!menuCollapsedRef.current && !isClickOnMenu && !isClickOnMenuBtn) {
         setMenuCollapsed(true);
       }
     };
 
     window.addEventListener("click", handleClick);
     return () => window.removeEventListener("click", handleClick);
-  }, [menuCollapsed]);
+  }, []);
 
   return (
     <header className="relative z-10 md:flex md:justify-between xl:pt-10">
