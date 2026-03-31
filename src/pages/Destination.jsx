@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import data from "../data/data";
 
 const Destination = () => {
   const [index, setIndex] = useState(0);
   let destination = data[0].destinations[index];
+
+  useEffect(() => {
+    data[0].destinations.forEach((d) => {
+      new Image().src = d.images.portrait;
+    });
+  }, []);
 
   return (
     <main className="destination-bg bg-main min-h-screen flex flex-col items-center">

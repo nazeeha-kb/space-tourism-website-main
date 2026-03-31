@@ -1,9 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import data from "./../data/data";
 
 const Technology = () => {
   const [index, setIndex] = useState(0);
   const technology = data[0].technology[index];
+
+  useEffect(() => {
+    data[0].technology.forEach((t) => {
+      new Image().src = t.images.portrait;
+      // new Image().src = t.images.landscape;
+    });
+  }, []);
 
   return (
     <main className="technology-bg bg-main min-h-screen flex flex-col items-center">

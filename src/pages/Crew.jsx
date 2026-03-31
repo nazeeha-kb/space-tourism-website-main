@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import data from "./../data/data";
 
 const Crew = () => {
   const [index, setIndex] = useState(0);
   const crew = data[0].crew[index];
+
+  useEffect(() => {
+    data[0].technology.forEach((c) => {
+      new Image().src = c.images.portrait;
+    });
+  }, []);
 
   return (
     <main className="crew-bg bg-main min-h-screen flex flex-col items-center">
@@ -20,12 +26,8 @@ const Crew = () => {
               {/* Content */}
               <div className="flex flex-col gap-6 xl:flex-1 xl:justify-center xl:w-full">
                 <div className="uppercase font-cust-serif">
-                  <h2 className="cap-heading">
-                    {crew.role}
-                  </h2>
-                  <h1 className="large-heading">
-                    {crew.name}
-                  </h1>
+                  <h2 className="cap-heading">{crew.role}</h2>
+                  <h1 className="large-heading">{crew.name}</h1>
                 </div>
                 <p className="text-cust-light text-cust-300">{crew.bio}</p>
               </div>
