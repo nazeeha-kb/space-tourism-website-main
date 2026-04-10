@@ -33,19 +33,30 @@ const Destination = () => {
             {/* Content */}
             <div className="flex flex-col gap-6 xl:gap-10 items-center xl:items-start text-center xl:text-start">
               <nav>
-                <ul className="flex gap-8 numbered-title items-start justify-center underline-indicators plain h-8 text-cust-300">
+                <ul
+                  role="tablist"
+                  className="flex gap-8 numbered-title items-start justify-center underline-indicators plain h-8 text-cust-300"
+                >
                   {/* set index to index selected below */}
-                  <li onClick={() => setIndex(0)} aria-selected={index == 0}>
-                    Moon
+                  <li role="tab" onClick={() => setIndex(0)}>
+                    <button aria-selected={index == 0} className="uppercase">
+                      Moon
+                    </button>
                   </li>
-                  <li onClick={() => setIndex(1)} aria-selected={index == 1}>
-                    Mars
+                  <li role="tab" onClick={() => setIndex(1)}>
+                    <button aria-selected={index == 1} className="uppercase">
+                      Mars
+                    </button>
                   </li>
-                  <li onClick={() => setIndex(2)} aria-selected={index == 2}>
-                    Europa
+                  <li role="tab" onClick={() => setIndex(2)}>
+                    <button aria-selected={index == 2} className="uppercase">
+                      Europa
+                    </button>
                   </li>
-                  <li onClick={() => setIndex(3)} aria-selected={index == 3}>
-                    Titan
+                  <li role="tab" onClick={() => setIndex(3)}>
+                    <button aria-selected={index == 3} className="uppercase">
+                      Titan
+                    </button>
                   </li>
                 </ul>
               </nav>

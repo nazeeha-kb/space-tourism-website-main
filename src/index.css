@@ -194,29 +194,29 @@
     margin-right: .5em;
   }
 
-  .underline-indicators>* {
+  .underline-indicators>li>* {
     @apply border-white/0 cursor-pointer grid md:place-items-center transition-colors duration-500 h-full;
   }
 
-  .underline-indicators.plain>*:hover,
-  .underline-indicators.plain>*:focus {
+  .underline-indicators.plain>li>*:hover,
+  .underline-indicators.plain>li>*:focus {
     @apply border-b-3 border-white/50;
   }
 
   /* indicator for nav */
-  .underline-indicators.main-nav>*:hover,
-  .underline-indicators.main-nav>*:focus {
+  .underline-indicators.main-nav>li>*:hover,
+  .underline-indicators.main-nav>li>*:focus {
     @apply md:border-b-3 md:border-r-0 border-r-4 border-white/50;
   }
 
-  .underline-indicators.plain>.active,
-  .underline-indicators.plain>[aria-selected="true"] {
+  .underline-indicators.plain>li>.active,
+  .underline-indicators.plain>li>[aria-selected="true"] {
     @apply border-b-3 border-white text-white;
   }
 
   /* indicator for nav */
-  .underline-indicators.main-nav>.active,
-  .underline-indicators.main-nav>[aria-selected="true"] {
+  .underline-indicators.main-nav>li>.active,
+  .underline-indicators.main-nav>li>[aria-selected="true"] {
     @apply md:border-b-3 md:border-r-0 border-r-4 border-white text-white;
   }
 
@@ -227,31 +227,31 @@
 
   /* Dot indicators */
 
-  .dot-indicators>* {
-    @apply border-0 rounded-full p-1 aspect-[1] bg-white/25 cursor-pointer transition-colors duration-300;
+  .dot-indicators>li>* {
+    @apply border-0 rounded-full p-1 xl:p-1.5 aspect-[1] bg-white/25 cursor-pointer transition-colors duration-300;
   }
 
-  .dot-indicators>*:hover,
-  .dot-indicators>*:focus {
+  .dot-indicators>li>*:hover,
+  .dot-indicators>li>*:focus {
     @apply bg-white/50;
   }
 
-  .dot-indicators>[aria-selected="true"] {
+  .dot-indicators>li>[aria-selected="true"] {
     @apply bg-white;
   }
 
   /* Number indicators */
 
-  .number-indicators>* {
+  .number-indicators>li>* {
     @apply border border-white/25 rounded-full text-white bg-cust-dark h-10 md:h-14 lg:h-18 xl:h-20 aspect-[1] font-cust-serif grid place-items-center cursor-pointer transition-colors duration-400;
   }
 
-  .number-indicators>*:hover,
-  .number-indicators>*:focus {
+  .number-indicators>li>*:hover,
+  .number-indicators>li>*:focus {
     @apply border-white;
   }
 
-  .number-indicators>[aria-selected="true"] {
+  .number-indicators>li>[aria-selected="true"] {
     @apply bg-white text-cust-dark;
   }
 

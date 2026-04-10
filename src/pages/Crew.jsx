@@ -33,31 +33,39 @@ const Crew = () => {
               </div>
               {/* Dot Indicators */}
               <nav>
-                <ul className="dot-indicators .tech-indiciator flex-row flex gap-4 xl:gap-10 h-2.5 -mt-20">
+                <ul className="dot-indicators .tech-indiciator flex-row flex gap-4 xl:gap-10 h-2.5 -mt-5 xl:-mt-20" role="tablist">
                   <li
                     onClick={() => {
                       setIndex(0);
                     }}
-                    aria-selected={index == 0}
-                  ></li>
+                  >
+                    {" "}
+                    <button role="tab" aria-selected={index == 0}></button>
+                  </li>
                   <li
                     onClick={() => {
                       setIndex(1);
                     }}
-                    aria-selected={index == 1}
-                  ></li>
+                  >
+                    {" "}
+                    <button role="tab" aria-selected={index == 1}></button>
+                  </li>
                   <li
                     onClick={() => {
                       setIndex(2);
                     }}
-                    aria-selected={index == 2}
-                  ></li>
+                  >
+                    {" "}
+                    <button role="tab" aria-selected={index == 2}></button>
+                  </li>
                   <li
                     onClick={() => {
                       setIndex(3);
                     }}
-                    aria-selected={index == 3}
-                  ></li>
+                  >
+                    {" "}
+                    <button role="tab" aria-selected={index == 3}></button>
+                  </li>
                 </ul>
               </nav>
             </article>

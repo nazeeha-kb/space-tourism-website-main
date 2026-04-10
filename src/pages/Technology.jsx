@@ -33,30 +33,33 @@ const Technology = () => {
           <div className="flex flex-col lg:flex-row gap-10">
             {/* Indicators */}
             <nav>
-              <ul className="flex flex-row lg:flex-col justify-center number-indicators gap-4">
+              <ul
+                role="tablist"
+                className="flex flex-row lg:flex-col justify-center number-indicators gap-4"
+              >
                 <li
+                  role="tab"
                   onClick={() => {
                     setIndex(0);
                   }}
-                  aria-selected={index == 0}
                 >
-                  1
+                  <button aria-selected={index == 0}>1</button>
                 </li>
                 <li
+                  role="tab"
                   onClick={() => {
                     setIndex(1);
                   }}
-                  aria-selected={index == 1}
                 >
-                  2
+                  <button aria-selected={index == 1}>2</button>
                 </li>
                 <li
+                  role="tab"
                   onClick={() => {
                     setIndex(2);
                   }}
-                  aria-selected={index == 2}
                 >
-                  3
+                  <button aria-selected={index == 2}>3</button>
                 </li>
               </ul>
             </nav>

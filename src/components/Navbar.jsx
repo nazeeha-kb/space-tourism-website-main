@@ -45,7 +45,7 @@ const Navbar = () => {
     <header className="relative z-10 md:flex md:justify-between xl:pt-10">
       {/* Logo and Menu toggle Button */}
       <div className="py-6 pl-6 md:pl-10 xl:pl-16 md:flex-1 md:w-auto w-screen flex justify-between xl:items-center xl:gap-16">
-        <Link to={"/"}>
+        <Link to={"/"} aria-label="home">
           <Logo />
         </Link>
         {/* line */}
@@ -76,23 +76,45 @@ const Navbar = () => {
           {/* Navbar */}
           <nav className="md:h-full">
             <ul className="md:flex-row flex flex-col md:gap-12 gap-8 md:text-cust-300 md:px-16 md:pt-0 pt-30 px-10 underline-indicators main-nav md:h-full">
-              <li aria-selected={currentPath === "/"}>
-                <Link to={"/"}>
+              <li>
+                <Link
+                  className={`${currentPath === "/" ? "active" : ""}`}
+                  {...(currentPath === "/" ? { "aria-current": "page" } : {})}
+                  to={"/"}
+                >
                   <span className="text-white">00</span>Home
                 </Link>
               </li>
-              <li aria-selected={currentPath === "/destination"}>
-                <Link to={"/destination"}>
+              <li>
+                <Link
+                  className={`${currentPath === "/destination" ? "active" : ""}`}
+                  {...(currentPath === "/destination"
+                    ? { "aria-current": "page" }
+                    : {})}
+                  to={"/destination"}
+                >
                   <span className="text-white">01</span>Destination
                 </Link>
               </li>
-              <li aria-selected={currentPath === "/crew"}>
-                <Link to={"/crew"}>
+              <li>
+                <Link
+                  className={`${currentPath === "/crew" ? "active" : ""}`}
+                  {...(currentPath === "/crew"
+                    ? { "aria-current": "page" }
+                    : {})}
+                  to={"/crew"}
+                >
                   <span className="text-white">02</span>Crew
                 </Link>
               </li>
-              <li aria-selected={currentPath == "/technology"}>
-                <Link to={"/technology"}>
+              <li>
+                <Link
+                  className={`${currentPath === "/technology" ? "active" : ""}`}
+                  {...(currentPath === "/technology"
+                    ? { "aria-current": "page" }
+                    : {})}
+                  to={"/technology"}
+                >
                   <span className="text-white">03</span>Technology
                 </Link>
               </li>
