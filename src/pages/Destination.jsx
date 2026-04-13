@@ -12,7 +12,7 @@ const Destination = () => {
   }, []);
 
   return (
-    <main className="destination-bg bg-main min-h-screen flex flex-col items-center">
+    <main className="destination-bg bg-main min-h-screen xl:max-h-screen xl:overflow-hidden flex flex-col items-center">
       <div className="space-navbar p-6 md:p-10 max-w-7xl xl:flex-1 md:w-full">
         <div className="flex flex-col gap-6 xl:justify-center items-center xl:flex-1">
           {/* heading */}
@@ -26,7 +26,7 @@ const Destination = () => {
             <div className="grid place-items-center py-4 md:py-12 xl:py-0">
               <img
                 src={destination.images.webp}
-                alt=""
+                alt={`Image of ${destination.name}`}
                 className="w-37.5 md:w-75 xl:w-120 aspect-1"
               />
             </div>

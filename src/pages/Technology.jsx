@@ -13,7 +13,7 @@ const Technology = () => {
   }, []);
 
   return (
-    <main className="technology-bg bg-main min-h-screen flex flex-col items-center">
+    <main className="technology-bg bg-main min-h-screen xl:max-h-screen xl:overflow-hidden flex flex-col items-center">
       <div className="space-navbar p-6 pb-12 max-w-7xl lg:flex-1 md:w-full">
         <article className="flex flex-col items-center md:items-start self-start w-full">
           {/* heading */}
@@ -26,7 +26,7 @@ const Technology = () => {
           <div className="tech-img-parent pt-16 -mx-6 lg:-mr-20">
             <img
               src={technology.images.portrait}
-              alt=""
+              alt={`Image of ${technology.name}`}
               className="tech-img h-65 md:h-90 w-screen lg:w-142 lg:h-120 object-cover object-bottom md:object-center"
             />
           </div>
@@ -64,10 +64,10 @@ const Technology = () => {
               </ul>
             </nav>
             {/* Content */}
-            <div className="flex flex-col gap-4 xl:text-start">
+            <div className="flex flex-col gap-4 xl:text-start" role="tabpanel" aria-labelledby={`tech-tab-${index}`}>
               <div className="uppercase font-cust-serif">
                 <h2 className="cap-heading">The terminology...</h2>
-                <h1 className="large-heading">{technology.name}</h1>
+                <h3 className="large-heading">{technology.name}</h3>
               </div>
               <p className="para max-w-lg">{technology.description}</p>
             </div>

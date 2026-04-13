@@ -21,7 +21,7 @@ const home = () => {
           </div>
           {/* Button */}
           <div className="flex items-center xl:justify-end justify-center flex-1">
-            <Link to={"/destination"} className="large-button">
+            <Link to={"/destination"} className="large-button" aria-label="Explore destinations">
               Explore
             </Link>
           </div>

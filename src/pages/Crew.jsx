@@ -27,44 +27,44 @@ const Crew = () => {
               <div className="flex flex-col gap-6 xl:flex-1 xl:justify-center xl:w-full">
                 <div className="uppercase font-cust-serif">
                   <h2 className="cap-heading">{crew.role}</h2>
-                  <h1 className="large-heading">{crew.name}</h1>
+                  <h3 className="large-heading">{crew.name}</h3>
                 </div>
                 <p className="text-cust-light text-cust-300">{crew.bio}</p>
               </div>
               {/* Dot Indicators */}
               <nav>
                 <ul className="dot-indicators .tech-indiciator flex-row flex gap-4 xl:gap-10 h-2.5 -mt-5 xl:-mt-20" role="tablist">
-                  <li
-                    onClick={() => {
-                      setIndex(0);
-                    }}
-                  >
-                    {" "}
-                    <button role="tab" aria-selected={index == 0}></button>
+                  <li role="presentation">
+                    <button 
+                      role="tab" 
+                      aria-selected={index === 0} 
+                      aria-label={`View ${data[0].crew[0].name}, ${data[0].crew[0].role}`}
+                      onClick={() => setIndex(0)}
+                    ></button>
                   </li>
-                  <li
-                    onClick={() => {
-                      setIndex(1);
-                    }}
-                  >
-                    {" "}
-                    <button role="tab" aria-selected={index == 1}></button>
+                  <li role="presentation">
+                    <button 
+                      role="tab" 
+                      aria-selected={index === 1} 
+                      aria-label={`View ${data[0].crew[1].name}, ${data[0].crew[1].role}`}
+                      onClick={() => setIndex(1)}
+                    ></button>
                   </li>
-                  <li
-                    onClick={() => {
-                      setIndex(2);
-                    }}
-                  >
-                    {" "}
-                    <button role="tab" aria-selected={index == 2}></button>
+                  <li role="presentation">
+                    <button 
+                      role="tab" 
+                      aria-selected={index === 2} 
+                      aria-label={`View ${data[0].crew[2].name}, ${data[0].crew[2].role}`}
+                      onClick={() => setIndex(2)}
+                    ></button>
                   </li>
-                  <li
-                    onClick={() => {
-                      setIndex(3);
-                    }}
-                  >
-                    {" "}
-                    <button role="tab" aria-selected={index == 3}></button>
+                  <li role="presentation">
+                    <button 
+                      role="tab" 
+                      aria-selected={index === 3} 
+                      aria-label={`View ${data[0].crew[3].name}, ${data[0].crew[3].role}`}
+                      onClick={() => setIndex(3)}
+                    ></button>
                   </li>
                 </ul>
               </nav>
@@ -73,7 +73,7 @@ const Crew = () => {
             <div className="grid place-items-center pt-4 xl:pt-0">
               <img
                 src={crew.images.webp}
-                alt=""
+                alt={`Portrait of ${crew.name}, ${crew.role}`}
                 className="crew-img h-85 md:h-140 aspect-1 bg-cover mask-b-from-80%"
               />
             </div>

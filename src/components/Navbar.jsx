@@ -53,7 +53,7 @@ const Navbar = () => {
         <button
           ref={menuBtnRef}
           className="mr-6 z-20 md:hidden block"
-          aria-expanded="false"
+          aria-expanded={menuCollapsed ? "false" : "true"}
           aria-label="menu"
           onClick={toggleMenu}
           id="menu-btn"
@@ -72,6 +72,7 @@ const Navbar = () => {
           id="menu"
           ref={menuRef}
           className="uppercase numbered-title md:h-full h-screen md:static absolute md:bg-white/5 bg-cust-dark/15 right-0 top-0 md:translate-0 -translate-y-24 backdrop-blur-2xl xl:pl-20 md:p-0 pl-8 flex flex-col md:justify-center gap-12 md:w-full w-[75%]"
+          aria-hidden={menuCollapsed ? "true" : "false"}
         >
           {/* Navbar */}
           <nav className="md:h-full">
